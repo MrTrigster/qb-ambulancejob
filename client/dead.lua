@@ -41,7 +41,9 @@ function OnDeath()
             else
                 NetworkResurrectLocalPlayer(pos.x, pos.y, pos.z + 0.5, heading, true, false)
             end
-
+	    
+	    TriggerServerEvent("QBCore:Server:SetMetaData", "hunger", 20)
+	    TriggerServerEvent("QBCore:Server:SetMetaData", "thirst", 20)
             SetEntityInvincible(player, true)
             SetEntityHealth(player, GetEntityMaxHealth(player))
             if IsPedInAnyVehicle(player, false) then
